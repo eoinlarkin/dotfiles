@@ -53,3 +53,23 @@ alias treedir="find | sed 's|[^/]*/|\|-|g'"
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 export HISTTIMEFORMAT="%F %T "
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/eoin/miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/eoin/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/eoin/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/eoin/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/eoin/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/home/eoin/miniforge3/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
