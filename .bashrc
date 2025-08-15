@@ -8,6 +8,9 @@
 # adding local directory for Ansible 
 export PATH="~/.local/bin:$PATH"
 
+# adding script folder for custom bash scripts
+export PATH="$HOME/scripts:$PATH"
+
 #------------------------------------------------------------
 # Application defaults
 #------------------------------------------------------------
@@ -73,3 +76,16 @@ if [ -f "/home/eoin/miniforge3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/home/eoin/Downloads/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/home/eoin/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
